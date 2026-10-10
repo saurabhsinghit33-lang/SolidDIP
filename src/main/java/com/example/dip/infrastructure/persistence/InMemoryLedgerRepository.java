@@ -1,13 +1,12 @@
 package com.example.dip.infrastructure.persistence;
 
 import com.example.dip.domain.port.LedgerRepository;
-import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-@Repository
+// Notice there is no @Repository or @Component here anymore!
 public class InMemoryLedgerRepository implements LedgerRepository {
 
     private final Map<String, BigDecimal> accountBalances = new ConcurrentHashMap<>();
